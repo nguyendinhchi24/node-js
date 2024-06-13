@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js",
+    "server": "concurrently --raw \"nodemon src/index.js\" \"node-sass --watch src/resources/scss/ --output src/public/css/\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +21,12 @@
   },
   "homepage": "https://github.com/nguyendinhchi24/node-js#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "morgan": "^1.10.0",
+    "node-sass": "^9.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
